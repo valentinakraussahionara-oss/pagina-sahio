@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NovaShop - Tienda Online</title>
+
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="logo">
+            <span>Nova</span>Shop
+        </div>
+
+
+        <div class="buscador">
+
+            <input
+                type="text"
+                id="buscador"
+                placeholder="Buscar productos..."
+            >
+
+        </div>
+
+
+        <button
+            id="abrir-carrito"
+            class="boton-carrito"
+        >
+            🛒 Carrito
+
+            <span id="contador-carrito">
+                0
+            </span>
+
+        </button>
+
+    </header>
+
+
+
+    <!-- ================= CARRUSEL PROMOCIONAL ================= -->
+
+    <section class="carrusel-promocional">
+
+        <div class="carrusel-contenedor">
+
+
+            <!-- SLIDE 1 -->
+
+            <div class="slide activo">
+
+                <div class="slide-texto">
+
+                    <span>
+                        OFERTA ESPECIAL
+                    </span>
+
+                    <h2>
+                        Potenciá tu experiencia gamer
+                    </h2>
+
+                    <p>
+                        Descubrí nuestro Mouse Gamer de alta
+                        precisión y llevá tus partidas al
+                        siguiente nivel.
+                    </p>
+
+                    <button
+                        class="btn-slide"
+                        data-producto="4"
+                    >
+                        Comprar ahora
+                    </button>
+
+                </div>
+
+
+                <div class="slide-imagen">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=800&q=80"
+                        alt="Mouse Gamer"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SLIDE 2 -->
+
+            <div class="slide">
+
+                <div class="slide-texto">
+
+                    <span>
+                        TECNOLOGÍA
+                    </span>
+
+                    <h2>
+                        Smartwatch Pro
+                    </h2>
+
+                    <p>
+                        Tecnología, estilo y comodidad
+                        en un solo producto.
+                    </p>
+
+                    <button
+                        class="btn-slide"
+                        data-producto="2"
+                    >
+                        Ver producto
+                    </button>
+
+                </div>
+
+
+                <div class="slide-imagen">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80"
+                        alt="Smartwatch Pro"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SLIDE 3 -->
+
+            <div class="slide">
+
+                <div class="slide-texto">
+
+                    <span>
+                        DEPORTE
+                    </span>
+
+                    <h2>
+                        Preparado para entrenar
+                    </h2>
+
+                    <p>
+                        Encontrá zapatillas y accesorios
+                        deportivos para acompañarte en
+                        cada entrenamiento.
+                    </p>
+
+                    <button
+                        class="btn-slide"
+                        data-producto="17"
+                    >
+                        Ver producto
+                    </button>
+
+                </div>
+
+
+                <div class="slide-imagen">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80"
+                        alt="Zapatillas deportivas"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= FLECHAS ================= -->
+
+            <button
+                class="carrusel-anterior"
+                id="carrusel-anterior"
+            >
+                ‹
+            </button>
+
+
+            <button
+                class="carrusel-siguiente"
+                id="carrusel-siguiente"
+            >
+                ›
+            </button>
+
+
+
+            <!-- ================= INDICADORES ================= -->
+
+            <div class="carrusel-indicadores">
+
+                <button
+                    class="indicador activo"
+                    data-slide="0"
+                ></button>
+
+                <button
+                    class="indicador"
+                    data-slide="1"
+                ></button>
+
+                <button
+                    class="indicador"
+                    data-slide="2"
+                ></button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-texto">
+
+            <span class="etiqueta">
+                NUEVA COLECCIÓN
+            </span>
+
+            <h1>
+                Todo lo que necesitás,
+                <span>en un solo lugar.</span>
+            </h1>
+
+            <p>
+                Descubrí tecnología, accesorios, hogar
+                y deportes con productos seleccionados
+                especialmente para vos.
+            </p>
+
+            <button
+                id="ver-productos"
+                class="btn-hero"
+            >
+                Ver productos
+            </button>
+
+        </div>
+
+
+        <div class="hero-icono">
+            🛍️
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CATEGORÍAS ================= -->
+
+    <section class="categorias">
+
+        <button
+            class="categoria activa"
+            data-categoria="Todos"
+        >
+            Todos
+        </button>
+
+
+        <button
+            class="categoria"
+            data-categoria="Tecnología"
+        >
+            Tecnología
+        </button>
+
+
+        <button
+            class="categoria"
+            data-categoria="Accesorios"
+        >
+            Accesorios
+        </button>
+
+
+        <button
+            class="categoria"
+            data-categoria="Hogar"
+        >
+            Hogar
+        </button>
+
+
+        <button
+            class="categoria"
+            data-categoria="Deportes"
+        >
+            Deportes
+        </button>
+
+    </section>
+
+
+
+    <!-- ================= CATÁLOGO ================= -->
+
+    <main
+        id="productos"
+        class="catalogo"
+    >
+
+        <div class="titulo-catalogo">
+
+            <div>
+
+                <span>
+                    CATÁLOGO
+                </span>
+
+                <h2>
+                    Productos destacados
+                </h2>
+
+            </div>
+
+
+            <p id="cantidad-resultados">
+                20 productos
+            </p>
+
+        </div>
+
+
+        <div
+            id="lista-productos"
+            class="productos-grid"
+        ></div>
+
+    </main>
+
+
+
+    <!-- ================= OVERLAY ================= -->
+
+    <div
+        id="overlay"
+        class="overlay"
+    ></div>
+
+
+
+    <!-- ================= CARRITO ================= -->
+
+    <aside
+        id="carrito-panel"
+        class="carrito-panel"
+    >
+
+        <div class="carrito-header">
+
+            <div>
+
+                <span>
+                    MI COMPRA
+                </span>
+
+                <h2>
+                    Carrito
+                </h2>
+
+            </div>
+
+
+            <button
+                id="cerrar-carrito"
+                class="cerrar"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div
+            id="carrito"
+            class="carrito-lista"
+        ></div>
+
+
+        <div class="carrito-footer">
+
+            <div class="fila">
+
+                <span>
+                    Unidades
+                </span>
+
+                <strong id="total-unidades">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="fila">
+
+                <span>
+                    Subtotal
+                </span>
+
+                <strong id="subtotal">
+                    $0
+                </strong>
+
+            </div>
+
+
+            <div class="total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="total-precio">
+                    $0
+                </strong>
+
+            </div>
+
+
+            <button
+                id="ir-pago"
+                class="btn-pagar"
+            >
+                Continuar al pago
+            </button>
+
+
+            <button
+                id="vaciar-carrito"
+                class="btn-vaciar"
+            >
+                Vaciar carrito
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ================= MODAL DE PAGO ================= -->
+
+    <div
+        id="modal-pago"
+        class="modal-overlay"
+    >
+
+        <div class="modal">
+
+            <button
+                id="cerrar-pago"
+                class="cerrar-modal"
+            >
+                ×
+            </button>
+
+
+            <span class="modal-etiqueta">
+                FINALIZAR COMPRA
+            </span>
+
+
+            <h2>
+                Método de pago
+            </h2>
+
+
+
+            <!-- MÉTODOS -->
+
+            <div class="metodos">
+
+
+                <label class="metodo activo">
+
+                    <input
+                        type="radio"
+                        name="metodo"
+                        value="tarjeta"
+                        checked
+                    >
+
+                    <div>
+
+                        <strong>
+                            Tarjeta
+                        </strong>
+
+                        <small>
+                            Crédito o débito
+                        </small>
+
+                    </div>
+
+                    <b>
+                        💳
+                    </b>
+
+                </label>
+
+
+
+                <label class="metodo">
+
+                    <input
+                        type="radio"
+                        name="metodo"
+                        value="mercadopago"
+                    >
+
+                    <div>
+
+                        <strong>
+                            Mercado Pago
+                        </strong>
+
+                        <small>
+                            Pago mediante Mercado Pago
+                        </small>
+
+                    </div>
+
+                    <b>
+                        💙
+                    </b>
+
+                </label>
+
+            </div>
+
+
+
+            <!-- DATOS TARJETA -->
+
+            <div id="datos-tarjeta">
+
+                <div class="campo">
+
+                    <label>
+                        Nombre del titular
+                    </label>
+
+                    <input
+                        type="text"
+                        id="titular"
+                        placeholder="Nombre completo"
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label>
+                        Número de tarjeta
+                    </label>
+
+                    <input
+                        type="text"
+                        id="numero-tarjeta"
+                        maxlength="19"
+                        placeholder="0000 0000 0000 0000"
+                    >
+
+                </div>
+
+
+                <div class="doble">
+
+                    <div class="campo">
+
+                        <label>
+                            Vencimiento
+                        </label>
+
+                        <input
+                            type="text"
+                            placeholder="MM/AA"
+                            maxlength="5"
+                        >
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label>
+                            CVV
+                        </label>
+
+                        <input
+                            type="password"
+                            placeholder="***"
+                            maxlength="3"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CUOTAS -->
+
+            <div
+                id="contenedor-cuotas"
+                class="campo"
+            >
+
+                <label>
+                    Cantidad de cuotas
+                </label>
+
+                <select id="cuotas">
+
+                    <option value="1">
+                        1 cuota - Sin interés
+                    </option>
+
+                    <option value="3">
+                        3 cuotas
+                    </option>
+
+                    <option value="6">
+                        6 cuotas
+                    </option>
+
+                    <option value="9">
+                        9 cuotas
+                    </option>
+
+                    <option value="12">
+                        12 cuotas
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- RESUMEN -->
+
+            <div class="resumen-pago">
+
+                <div>
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="total-modal">
+                        $0
+                    </strong>
+
+                </div>
+
+
+                <p id="texto-cuota">
+                    1 cuota de $0
+                </p>
+
+            </div>
+
+
+            <button
+                id="confirmar-pago"
+                class="btn-confirmar"
+            >
+                Confirmar compra
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= NOTIFICACIÓN ================= -->
+
+    <div
+        id="notificacion"
+        class="notificacion"
+    >
+        Producto agregado
+    </div>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
